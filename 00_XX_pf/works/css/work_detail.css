@@ -1,0 +1,267 @@
+@charset "UTF-8";
+
+/* ============================================================
+   作品詳細ページ専用CSS
+   ファイル名：work_detail.css
+   置き場所：works/css/work_detail.css
+============================================================ */
+
+
+/* ------------------------------------------------------------
+   ページ上部のヘッダー
+------------------------------------------------------------ */
+.product-header {
+    /* 背景：左上から右下に向かって紫からピンクへのグラデーション */
+    background: linear-gradient(135deg, #a493fb 0%, #f5576c 100%);
+    /* 画像を背景に入れる場合は↓のコメントを外してパスを変更
+    background-image: url("../images/ヘッダー背景画像.jpg"); */
+
+    /* 上に3rem・下に2rem・左右に0の余白 */
+    padding: 3rem 0 2rem;
+    /* 文字を中央揃えにする */
+    text-align: center;
+    /* 文字の色を白にする */
+    color: white;
+    /* 下側に3remの余白をつける */
+    margin-bottom: 3rem;
+}
+
+.product-title {
+    /* 文字の大きさを2.5remにする */
+    font-size: 2.5rem;
+    /* フォントをChanga Oneにする */
+    font-family: "Changa One", sans-serif;
+    /* 下側に1remの余白をつける */
+    margin-bottom: 1rem;
+}
+
+
+/* ------------------------------------------------------------
+   コンテナ（全体の幅・中央寄せ）
+------------------------------------------------------------ */
+.product-container {
+    /* 横幅の最大値を900pxにする */
+    max-width: 900px;
+    /* 左右中央に配置する */
+    margin: 0 auto;
+    /* 左右に1.5remの余白をつける */
+    padding: 0 1.5rem;
+}
+
+
+/* ------------------------------------------------------------
+   ★★★ 作品画像（サイズ切り替えの仕組み）★★★
+------------------------------------------------------------ */
+
+/*
+ * 【共通設定】
+ * imgタグに必ず class="product-main-image" をつけること。
+ * size-s / size-m / size-l はこの下に追加する。
+ */
+.product-main-image {
+    /* 角を16px丸くする */
+    border-radius: 16px;
+    /* 影をつける */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    /* 下側に2remの余白をつける */
+    margin-bottom: 2rem;
+    /* 左右中央に配置する */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*
+ * 【Sサイズ】名刺・ロゴ・アイコンなど小さめの作品
+ * 使い方：class="product-main-image size-s"
+ */
+.product-main-image.size-s {
+    /* 横幅を40%にする（小さめ） */
+    width: 40%;
+}
+
+/*
+ * 【Mサイズ】A4ポスター・イラストなど縦長・中くらいの作品
+ * 使い方：class="product-main-image size-m"
+ */
+.product-main-image.size-m {
+    /* 横幅を65%にする（中くらい） */
+    width: 65%;
+}
+
+/*
+ * 【Lサイズ】Webページ・横幅いっぱいで見せたい作品
+ * 使い方：class="product-main-image size-l"
+ */
+.product-main-image.size-l {
+    /* 横幅を100%にする（横幅いっぱい） */
+    width: 100%;
+}
+
+
+/* ------------------------------------------------------------
+   作品の説明文エリア
+------------------------------------------------------------ */
+.product-info {
+    /* 背景色をベージュっぽい色にする */
+    background-color: #faf7f0;
+    /* 角を16px丸くする */
+    border-radius: 16px;
+    /* 内側に2remの余白をつける */
+    padding: 2rem;
+    /* 下側に2remの余白をつける */
+    margin-bottom: 2rem;
+}
+
+.product-info h3 {
+    /* 文字の大きさを1.5remにする */
+    font-size: 1.5rem;
+    /* 下側に1remの余白をつける */
+    margin-bottom: 1rem;
+    /* 文字の色を濃い茶色にする */
+    color: #432;
+    /* 下側に2pxの紫色の線を引く */
+    border-bottom: 2px solid #a493fb;
+    /* 下線と文字の間に0.5remの余白をつける */
+    padding-bottom: 0.5rem;
+}
+
+.product-info p {
+    /* 行の高さを2倍にする（行間を広くする） */
+    line-height: 2;
+    /* 下側に1.5remの余白をつける */
+    margin-bottom: 1.5rem;
+    /* 文字の色を濃い茶色にする */
+    color: #432;
+}
+
+/* 説明文の最後のpタグには下余白をつけない */
+.product-info p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ------------------------------------------------------------
+   制作情報（制作年・使用ソフトなど）
+------------------------------------------------------------ */
+.product-details {
+    /* グリッドレイアウトにする */
+    display: grid;
+    /* 各アイテムの間に1remの隙間をつける */
+    gap: 1rem;
+    /* 下側に2remの余白をつける */
+    margin-bottom: 2rem;
+}
+
+.detail-item {
+    /* 横並びにする */
+    display: flex;
+    /* 内側に1remの余白をつける */
+    padding: 1rem;
+    /* 背景色を白にする */
+    background-color: white;
+    /* 角を8px丸くする */
+    border-radius: 8px;
+}
+
+.detail-item dt {
+    /* 文字を太字にする */
+    font-weight: bold;
+    /* 横幅の最小値を120pxにする（項目名の幅をそろえるため） */
+    min-width: 120px;
+    /* 文字の色を紫にする */
+    color: #a493fb;
+}
+
+.detail-item dd {
+    /* 文字の色を濃い茶色にする */
+    color: #432;
+}
+
+
+/* ------------------------------------------------------------
+   一覧に戻るボタン
+------------------------------------------------------------ */
+.back-link {
+    /* インラインブロック要素にする */
+    display: inline-block;
+    /* 背景色を紫にする */
+    background-color: #a493fb;
+    /* 文字の色を白にする */
+    color: white;
+    /* 上下に1rem・左右に2remの余白をつける */
+    padding: 1rem 2rem;
+    /* 角を8px丸くする */
+    border-radius: 8px;
+    /* 文字の大きさ */
+    font-size: 1.125rem;
+    /* 変化を0.3秒かけて滑らかにする */
+    transition: all 0.3s ease;
+    /* 下側に4remの余白をつける */
+    margin-bottom: 4rem;
+}
+
+.back-link:hover {
+    /* マウスを乗せたら背景色をピンクにする */
+    background-color: #f5576c;
+    /* マウスを乗せたら上に2px移動する */
+    transform: translateY(-2px);
+    /* マウスを乗せたら影をつける */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ------------------------------------------------------------
+   フッター
+------------------------------------------------------------ */
+.page-footer {
+    /* 背景：上から下にグレーのグラデーション */
+    background: linear-gradient(180deg, #f5f5f5 0%, #e0e0e0 100%);
+    /* 上側に4remの余白をつける */
+    padding-top: 4rem;
+}
+
+/* .copyright は style.css の共通スタイルを使用 */
+
+
+/* ============================================================
+   レスポンシブ設定：PC（1024px以上）
+============================================================ */
+@media (min-width: 1024px) {
+
+    .product-title {
+        /* タイトルの文字を大きくする */
+        font-size: 3.5rem;
+    }
+
+    .product-container {
+        /* コンテナの最大幅を広くする */
+        max-width: 1000px;
+    }
+
+    .product-info {
+        /* 内側の余白を広くする */
+        padding: 3rem;
+    }
+
+    .product-details {
+        /* 2列のグリッドレイアウトにする */
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* PCでの各サイズ調整 */
+    .product-main-image.size-s {
+        /* PCでは名刺・ロゴをさらに小さく見せる */
+        width: 30%;
+    }
+
+    .product-main-image.size-m {
+        /* PCではポスター・イラストを少し控えめに */
+        width: 55%;
+    }
+
+    .product-main-image.size-l {
+        /* PCでもWebページは横幅いっぱいのまま */
+        width: 100%;
+    }
+}

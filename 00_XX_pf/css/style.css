@@ -1,0 +1,591 @@
+@charset "UTF-8";
+
+/* ============================================================
+   基本設定（全ページ共通）
+============================================================ */
+html {
+    font-size: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "BIZ UDPGothic", sans-serif;
+    line-height: 1.7;
+    color: #432;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+iframe {
+    width: 100%;
+}
+
+/* ------------------------------------------------------------
+   共通レイアウト
+------------------------------------------------------------ */
+.container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.center {
+    text-align: center;
+}
+
+/* ------------------------------------------------------------
+   共通見出し・フォント（Googleフォント）
+------------------------------------------------------------ */
+.english-font {
+    font-family: "Changa One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.section-title {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.section-title-small {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* ------------------------------------------------------------
+   共通ボタン
+------------------------------------------------------------ */
+.button {
+    display: inline-block;
+    font-size: 1.25rem;
+    background-color: #0bd;
+    color: #fff;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0090aa;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ============================================================
+   1. ヘッダー（全ページ共通）
+============================================================ */
+.site-header {
+    padding-top: 1rem;
+}
+
+/* ロゴテキスト */
+.logo-text {
+    font-size: 2rem;
+    color: #432;
+    letter-spacing: 0.05em;
+}
+
+/* メニューナビゲーション */
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 1.25rem;
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.menu a {
+    color: #432;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.menu a:hover {
+    color: #0bd;
+    transform: translateY(-2px);
+}
+
+
+/* ============================================================
+   2. ヒーローセクション（全ページ共通）
+============================================================ */
+
+/* ------------------------------------------------------------
+   ヒーローセクション - 基本設定
+------------------------------------------------------------ */
+.hero {
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 100%);
+    pointer-events: none;
+}
+
+/* ------------------------------------------------------------
+   ヒーローセクション - 各ページの背景色
+------------------------------------------------------------ */
+/* トップページ */
+.hero-home {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 600px;
+}
+
+/* 作品一覧ページ */
+.hero-works {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    min-height: 400px;
+    margin-bottom: 4rem;
+}
+
+/* スキルページ */
+.hero-skills {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    min-height: 400px;
+    margin-bottom: 4rem;
+}
+
+/* お問い合わせページ */
+.hero-contact {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    min-height: 400px;
+    margin-bottom: 4rem;
+}
+
+/* ------------------------------------------------------------
+   ヒーローセクション - タイトル
+------------------------------------------------------------ */
+.hero-title {
+    font-size: 2.5rem;
+    text-align: center;
+    line-height: 1.4;
+    margin: auto 0 2rem;
+    color: #fff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ============================================================
+   3. メインコンテンツ
+============================================================ */
+
+/* ------------------------------------------------------------
+   トップページ - 自己紹介
+------------------------------------------------------------ */
+.about {
+    max-width: 736px;
+    padding: 0 1.5rem;
+    margin: 3rem auto 5rem;
+}
+
+.about p {
+    margin-bottom: 3rem;
+    line-height: 2;
+}
+
+/* ------------------------------------------------------------
+   作品一覧ページ - グリッドレイアウト
+------------------------------------------------------------ */
+.works-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+    margin-bottom: 4rem;
+}
+
+/*
+ * work-item は <a> タグで使う
+ * aタグのデフォルトスタイル（文字色・下線）をリセット済み
+ */
+.work-item {
+    /* ブロック要素として表示する（aタグはデフォルトでインライン） */
+    display: block;
+    /* 文字の色をbodyと同じ色にする（aタグは青になってしまうため） */
+    color: #432;
+    /* 下線を消す（style.cssのaタグの設定で消えているが念のため） */
+    text-decoration: none;
+    /* カードの角を丸くする */
+    border-radius: 16px;
+    /* はみ出した部分を隠す（画像の角を丸くするために必要） */
+    overflow: hidden;
+    /* ホバー時のアニメーションを滑らかにする */
+    transition: all 0.3s ease;
+    /* カードに影をつける */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    /* マウスカーソルをポインターにする */
+    cursor: pointer;
+}
+
+.work-item:hover {
+    /* マウスを乗せたら上に8px浮き上がる */
+    transform: translateY(-8px);
+    /* マウスを乗せたら影を濃くする */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.work-item img {
+    /* 画像を横幅いっぱいに表示する */
+    width: 100%;
+    /* 画像のアスペクト比を4:3に固定する */
+    aspect-ratio: 4/3;
+    /* 画像が枠からはみ出た場合は切り取る */
+    object-fit: cover;
+    /* 画像の下に余分な余白が出ないようにする */
+    display: block;
+}
+
+.work-info {
+    /* カード下部のテキストエリアに余白をつける */
+    padding: 1.5rem;
+    /* 背景色を白にする */
+    background-color: #fff;
+}
+
+.work-title {
+    /* 作品タイトルの文字サイズ */
+    font-size: 1.25rem;
+    /* 下側に余白をつける */
+    margin-bottom: 0.5rem;
+}
+
+.work-category {
+    /* カテゴリの文字サイズ */
+    font-size: 0.875rem;
+    /* カテゴリの文字色をグレーにする */
+    color: #999;
+}
+
+/* ------------------------------------------------------------
+   スキルページ - グリッドレイアウト
+------------------------------------------------------------ */
+.skills-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+    margin-bottom: 4rem;
+}
+
+.skill-item {
+    text-align: center;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.skill-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    color: #0bd;
+}
+
+.skill-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.skill-name {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.skill-description {
+    font-size: 0.875rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* ------------------------------------------------------------
+   スキルページ - ツールセクション
+------------------------------------------------------------ */
+.tools-section {
+    background-color: #f9f9f9;
+    padding: 4rem 0;
+    margin-bottom: 4rem;
+}
+
+.tools-list {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.tool-item {
+    margin-bottom: 1.5rem;
+}
+
+.tool-name {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+}
+
+.tool-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.tool-level {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    border-radius: 4px;
+    transition: width 1s ease;
+}
+
+/* ------------------------------------------------------------
+   お問い合わせページ - メールボックス
+------------------------------------------------------------ */
+.email-box {
+    max-width: 700px;
+    background-color: #faf7f0;
+    border-radius: 24px;
+    padding: 2.5rem;
+    margin: 0 auto 4rem;
+}
+
+.email-box p {
+    margin: 1rem 0 2rem;
+    line-height: 1.8;
+}
+
+/* ------------------------------------------------------------
+   お問い合わせページ - SNSリンク
+------------------------------------------------------------ */
+.sns-links {
+    max-width: 700px;
+    margin: 0 auto 4rem;
+}
+
+.sns-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sns-button {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 2rem;
+    background-color: #fff;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    color: #432;
+    font-size: 1.125rem;
+    transition: all 0.3s ease;
+}
+
+.sns-button:hover {
+    background-color: #f5f5f5;
+    border-color: #0bd;
+    transform: translateX(10px);
+}
+
+.sns-button svg {
+    flex-shrink: 0;
+}
+
+
+/* ============================================================
+   4. フッター（全ページ共通）
+============================================================ */
+.footer {
+    background: linear-gradient(180deg, #f5f5f5 0%, #e0e0e0 100%);
+    padding-top: 4rem;
+}
+
+/* 連絡先テーブル */
+.shop-info {
+    width: 100%;
+    max-width: 544px;
+    margin: auto;
+    padding: 0 1.5rem;
+    border-spacing: 0;
+}
+
+.shop-info th,
+.shop-info td {
+    border-bottom: 1px solid #c9c2bc;
+}
+
+.shop-info th {
+    text-align: left;
+    font-weight: normal;
+    padding: 1rem;
+}
+
+.shop-info td {
+    padding: 1rem 0;
+}
+
+/* コピーライト */
+.copyright {
+    background-color: #432;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 4rem;
+    color: #fff;
+}
+
+
+/* ============================================================
+   レスポンシブ設定：タブレット（768px以上　1023px以下）
+============================================================ */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    .menu {
+        font-size: 1.5rem;
+        gap: 2.5rem;
+    }
+
+    /* 作品一覧：2列 */
+    .works-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* スキル一覧：2列 */
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* ============================================================
+   レスポンシブ設定：PC（1024px以上）
+============================================================ */
+@media (min-width: 1024px) {
+
+    /* ------------------------------------------------------------
+       共通 - 見出し
+    ------------------------------------------------------------ */
+    .section-title {
+        font-size: 4rem;
+    }
+
+    .section-title-small {
+        font-size: 3rem;
+    }
+
+    /* ------------------------------------------------------------
+       1. ヘッダー（PCバージョン）
+    ------------------------------------------------------------ */
+    .site-header {
+        padding-top: 1.5rem;
+    }
+
+    .site-header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo-text {
+        font-size: 2.5rem;
+    }
+
+    .menu {
+        font-size: 1.5rem;
+        margin-top: 0;
+        gap: 3rem;
+    }
+
+    /* ------------------------------------------------------------
+       2. ヒーローセクション（PCバージョン）
+    ------------------------------------------------------------ */
+    .hero-home {
+        min-height: 700px;
+    }
+
+    .hero-works,
+    .hero-skills,
+    .hero-contact {
+        min-height: 450px;
+        margin-bottom: 6rem;
+    }
+
+    .hero-title {
+        font-size: 5rem;
+    }
+
+    /* ------------------------------------------------------------
+       3. メインコンテンツ（PCバージョン）
+    ------------------------------------------------------------ */
+
+    /* トップページ - 自己紹介 */
+    .about {
+        margin: 5rem auto 6rem;
+    }
+
+    /* 作品一覧：3列 */
+    .works-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+    }
+
+    /* スキル一覧：3列 */
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+    }
+
+    /* ツールセクション */
+    .tools-section {
+        padding: 6rem 0;
+    }
+
+    /* お問い合わせ - SNSボタン */
+    .sns-buttons {
+        flex-direction: row;
+    }
+
+    .sns-button {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .sns-button:hover {
+        transform: translateY(-5px);
+    }
+
+    /* ------------------------------------------------------------
+       4. フッター（PCバージョン）
+    ------------------------------------------------------------ */
+    .footer {
+        padding-top: 6rem;
+    }
+
+    .shop-info th {
+        padding-left: 2.5rem;
+    }
+}

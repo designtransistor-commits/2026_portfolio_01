@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <!-- ★ここを変更：ブラウザのタブに表示されるタイトル -->
+    <title>作品タイトル | Portfolio</title>
+    <meta name="description" content="作品の詳細ページ">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- リセットCSS（CDN） -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+
+    <!-- Googleフォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&display=swap" rel="stylesheet">
+
+    <!-- オリジナルCSS（共通） -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- 作品詳細ページ専用CSS -->
+    <link rel="stylesheet" href="css/work_detail.css">
+</head>
+
+<body>
+
+    <!-- ページ上部のヘッダー（カテゴリ名・サブタイトル） -->
+    <div class="product-header">
+        <!-- ★ここを変更：作品のカテゴリ名（例：Webデザイン、グラフィックデザイン） -->
+        <h1 class="product-title">グラフィックデザイン</h1>
+        <!-- ★ここを変更：作品のサブタイトル -->
+        <p>ブランドアイデンティティ</p>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <div class="product-container">
+
+        <!--
+        ============================================================
+        ★★★ 画像サイズの変え方 ★★★
+
+        imgタグの class に、作品の大きさに合わせて
+        size-s / size-m / size-l のどれか1つを追加するだけ！
+
+        【size-s】名刺・ロゴ・アイコンなど → 小さめに表示
+        【size-m】A4ポスター・イラストなど → 中くらいに表示
+        【size-l】Webページ・横幅いっぱいで見せたい作品 → 大きく表示
+
+        例：
+        <img src="images/○○.png" alt="○○" class="product-main-image size-s">
+        <img src="images/○○.png" alt="○○" class="product-main-image size-m">
+        <img src="images/○○.png" alt="○○" class="product-main-image size-l">
+        ============================================================
+        -->
+
+        <!-- ★src・alt・末尾のsize-○を変える -->
+        <img
+            src="images/作品ファイル名.png"
+            alt="作品の説明"
+            class="product-main-image size-s"
+        >
+
+        <!-- 作品の説明文 -->
+        <div class="product-info">
+            <h3>作品について</h3>
+            <!-- ★ここを変更：作品の説明文を書く（pタグを増やしてもOK） -->
+            <p>架空のカフェブランドのアイデンティティデザインです。ロゴ、名刺、メニュー、看板などのデザインを統一感を持って制作しました。</p>
+            <p>ナチュラルで温かみのあるブランドイメージを表現するため、アースカラーとシンプルなタイポグラフィを採用しています。</p>
+        </div>
+
+        <!-- 制作情報 -->
+        <div class="product-details">
+            <div class="detail-item">
+                <dt>制作年</dt>
+                <!-- ★ここを変更 -->
+                <dd>2025年</dd>
+            </div>
+            <div class="detail-item">
+                <dt>使用ソフト</dt>
+                <!-- ★ここを変更（例：HTML / CSS / JavaScript / Illustrator など） -->
+                <dd>Illustrator, InDesign</dd>
+            </div>
+            <div class="detail-item">
+                <dt>制作期間</dt>
+                <!-- ★ここを変更 -->
+                <dd>約3週間</dd>
+            </div>
+        </div>
+
+        <!-- 一覧に戻るボタン -->
+        <a href="index.html" class="back-link">← 作品一覧に戻る</a>
+
+    </div>
+
+    <!-- フッター -->
+    <footer class="page-footer">
+        <div class="copyright">
+            <small>&copy; 2025 Your Name Portfolio. All Rights Reserved.</small>
+        </div>
+    </footer>
+
+</body>
+</html>

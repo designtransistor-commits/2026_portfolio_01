@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio | 作品一覧</title>
+    <meta name="description" content="Webデザイン・グラフィックデザインのポートフォリオサイト">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- ファビコン -->
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+
+    <!-- リセットCSS（CDN） -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+
+    <!-- Googleフォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&display=swap" rel="stylesheet">
+
+    <!-- オリジナルCSS（共通） -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <!-- ヒーローセクション（メインビジュアル） -->
+    <div class="hero hero-works">
+
+        <!-- サイト全体のヘッダー -->
+        <header class="site-header">
+            <div class="container">
+                <h1 class="center">
+                    <a href="../index.html">
+                        <span class="logo-text english-font">Your Name</span>
+                    </a>
+                </h1>
+
+                <!-- ナビゲーションメニュー -->
+                <nav>
+                    <ul class="menu english-font">
+                        <li><a href="../index.html">About</a></li>
+                        <li><a href="index.html">Works</a></li>
+                        <li><a href="../skills/index.html">Skills</a></li>
+                        <li><a href="../contact/index.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <h2 class="hero-title english-font">Works</h2>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <main class="container">
+        <div class="works-grid">
+
+            <!--
+            ============================================================
+            ★★★ 作品カードの編集方法 ★★★
+
+            ★変更するのは3か所だけ！
+
+            [1] href="作品詳細ページのファイル名.html"
+                → 自分が作った詳細ページのファイル名に変える
+
+            [2] src="images/サムネイル画像のファイル名.jpg"
+                → imagesフォルダに入れた画像のファイル名に変える
+
+            [3] 作品タイトルとカテゴリの文字
+                → 自分の作品名とカテゴリに変える
+
+            ★ 作品を追加するときは
+              <a>〜</a> をまるごとコピーして3か所を書き換えるだけ！
+            ============================================================
+            -->
+
+            <!-- 作品1 -->
+            <!-- ★[1] href を詳細ページのファイル名に変える -->
+            <a href="work_cafe.html" class="work-item">
+                <!-- ★[2] src をサムネイル画像のファイル名に変える -->
+                <img src="images/work1-thumb.jpg" alt="カフェサイトデザイン">
+                <div class="work-info">
+                    <!-- ★[3] タイトルとカテゴリを変える -->
+                    <h3 class="work-title">西神田Cafe Website</h3>
+                    <p class="work-category">Web Design</p>
+                </div>
+            </a>
+
+            <!-- 作品2 -->
+            <a href="work_poster.html" class="work-item">
+                <img src="images/work2-thumb.jpg" alt="イベントポスター">
+                <div class="work-info">
+                    <h3 class="work-title">Music Event Poster</h3>
+                    <p class="work-category">Graphic Design</p>
+                </div>
+            </a>
+
+            <!-- 作品3 -->
+            <a href="work_app.html" class="work-item">
+                <img src="images/work3-thumb.jpg" alt="アプリUIデザイン">
+                <div class="work-info">
+                    <h3 class="work-title">Travel App UI</h3>
+                    <p class="work-category">UI Design</p>
+                </div>
+            </a>
+
+            <!-- 作品4 -->
+            <a href="work_logo.html" class="work-item">
+                <img src="images/work4-thumb.jpg" alt="ロゴデザイン">
+                <div class="work-info">
+                    <h3 class="work-title">Brand Logo Design</h3>
+                    <p class="work-category">Branding</p>
+                </div>
+            </a>
+
+            <!-- 作品5 -->
+            <a href="work_banner.html" class="work-item">
+                <img src="images/work5-thumb.jpg" alt="Webバナー">
+                <div class="work-info">
+                    <h3 class="work-title">Web Banner Series</h3>
+                    <p class="work-category">Web Design</p>
+                </div>
+            </a>
+
+            <!-- 作品6 -->
+            <a href="work_package.html" class="work-item">
+                <img src="images/work6-thumb.jpg" alt="パッケージデザイン">
+                <div class="work-info">
+                    <h3 class="work-title">Product Package</h3>
+                    <p class="work-category">Package Design</p>
+                </div>
+            </a>
+
+        </div>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <h3 class="section-title english-font">Contact</h3>
+
+        <!-- 連絡先情報テーブル -->
+        <table class="shop-info">
+            <tr>
+                <th>Email</th>
+                <td>your.email@example.com</td>
+            </tr>
+            <tr>
+                <th>SNS</th>
+                <td>@yourhandle</td>
+            </tr>
+            <tr>
+                <th>Location</th>
+                <td>Tokyo, Japan</td>
+            </tr>
+        </table>
+
+        <!-- コピーライト -->
+        <div class="copyright">
+            <small>
+                &copy; 2025 Your Name Portfolio. All Rights Reserved.
+            </small>
+        </div>
+    </footer>
+
+</body>
+</html>
